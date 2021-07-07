@@ -4,8 +4,6 @@ import { withRouter } from 'react-router';
 
 import { connect } from 'react-redux';
 
-import PropTypes from 'prop-types';
-
 const Photo = ({ post, onRemove, index, comments }) => {
 	console.log(post.id);
 
