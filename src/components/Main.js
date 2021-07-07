@@ -5,7 +5,9 @@ import { withRouter } from 'react-router';
 import Title from './Title';
 import PhotoLits from './PhotoLits';
 import AddPhoto from './AddPhoto';
-import { removePost, addPost } from '../redux/post.actions';
+import SinglePost from './SinglePost';
+
+import { removePost, addPost } from '../redux/post/post.actions';
 
 class Main extends Component {
 	// removeHandle = (postRemoved) => {
@@ -31,25 +33,26 @@ class Main extends Component {
 	// }
 
 	// this.props.dispatch(removeHandle)
+
 	render() {
-		const { posts, removePost, addPost } = this.props;
+		const { posts, comments, removePost, addPost } = this.props;
 		console.log('render');
 		console.log(this.props);
 
 		return (
 			<>
+				<h1>
+					<Link to='/'>Photogram</Link>
+				</h1>
 				<Route
 					exact
 					path='/'
 					render={() => (
 						<>
-							<h1>
-								<Link to='/'>Photogram</Link>
-							</h1>
 							{/* <Title title={'Photogram'} /> */}
 							<PhotoLits
 								posts={posts}
-								onRemove={(index) => removePost(index)}
+								onRemove={(index) => removePost(index, comments)}
 							/>
 						</>
 					)}
@@ -64,14 +67,26 @@ class Main extends Component {
 						/>
 					)}
 				/>
+
+				<Route
+					path='/single-post/:id'
+					render={(params) => (
+						<SinglePost
+							params={params}
+							onRemove={(index) => removePost(index)}
+						/>
+					)}
+				/>
 			</>
 		);
 	}
 }
 
 const mapStateToProps = (state) => {
+	console.log(state);
 	return {
-		posts: state.posts,
+		posts: state.post.posts,
+		comments: state.comment.comments,
 	};
 };
 

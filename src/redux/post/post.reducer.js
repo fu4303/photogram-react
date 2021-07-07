@@ -1,3 +1,5 @@
+import * as actionTypes from './post.actionTypes';
+
 const INITIAL_STATE = {
 	posts: [
 		{
@@ -28,9 +30,10 @@ const postReducer = (state = INITIAL_STATE, action) => {
 	// console.log(action.post);
 
 	switch (action.type) {
-		case 'REMOVE_POST':
+		case actionTypes.REMOVE_POST:
+			console.log('remove post', action.index);
 			return { posts: state.posts.filter((data, i) => i !== action.index) };
-		case 'ADD_POST':
+		case actionTypes.ADD_POST:
 			console.log('add post', action.post);
 			return {
 				...state,

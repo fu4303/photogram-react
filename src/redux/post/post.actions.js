@@ -1,7 +1,9 @@
+import * as actionTypes from './post.actionTypes';
+
 // Remove Post
 export const removePost = (index) => {
 	return {
-		type: 'REMOVE_POST',
+		type: actionTypes.REMOVE_POST,
 		index,
 	};
 };
