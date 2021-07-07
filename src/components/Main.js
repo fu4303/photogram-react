@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import Title from './Title';
 import PhotoLits from './PhotoLits';
 import AddPhoto from './AddPhoto';
 import SinglePost from './SinglePost';
