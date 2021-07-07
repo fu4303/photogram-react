@@ -50,9 +50,5 @@ const mapStateToProps = (state) => {
 	};
 };
 
-Photo.propType = {
-	// post: PropTypes.object.isRequired,
-	// onRemove: PropTypes.func.isRequired,
-};
 
 export default withRouter(connect(mapStateToProps)(Photo));
