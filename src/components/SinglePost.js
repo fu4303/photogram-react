@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
