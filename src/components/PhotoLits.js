@@ -28,9 +28,5 @@ const PhotoLits = ({ posts, onRemove }) => {
 	);
 };
 
-PhotoLits.propTypes = {
-	// posts: PropTypes.array.isRequired,
-	// onRemove: PropTypes.func.isRequired,
-};
 
 export default PhotoLits;
